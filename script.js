@@ -48,8 +48,6 @@ const car = {
     });
   },
 
-  // найкращий спосіб запису(скороч. запис ф-ї вираз)
-
   сheckIsDriver(someName, someAge) {
     car.drivers.forEach((driver) => {
       if (driver.name === someName && driver.age === someAge) {
@@ -74,5 +72,43 @@ const car = {
 
 car.info();
 car.addDriver();
-car.сheckIsDriver("Alex Black", 15);
+car.сheckIsDriver("Alex Black", 30);
 car.calculateFuelAndTime(1500);
+
+// 3.Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+// -Складання 2-х об'єктів-дробів.
+// -Віднімання 2-х об'єктів-дробів.
+// -Множення 2-х об'єктів-дробів.
+// -Ділення 2-х об'єктів-дробів.
+// -Скорочення об'єкта-дробу.
+// (Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)
+
+const fractions = [
+  {
+    numerator: 3,
+    denominator: 4,
+  },
+  {
+    numerator: 10,
+    denominator: 9,
+  },
+];
+
+// створюємо новий масив
+const decimalValues = fractions.map(
+  (item) => item.numerator / item.denominator
+);
+
+console.log(decimalValues);
+
+const addition = decimalValues.reduce((prev, current) => prev + current);
+console.log(`The sum of fractions is  ${+addition.toFixed(2)}.`);
+
+const subtraction = decimalValues.reduce((prev, current) => prev - current);
+console.log(`The result of subtraction is ${+subtraction.toFixed(2)}.`);
+
+const multiplication = decimalValues.reduce((prev, current) => prev * current);
+console.log(`The result of multiplication is ${+multiplication.toFixed(2)}.`);
+
+const division = decimalValues.reduce((prev, current) => prev / current);
+console.log(`The result of division is ${+division.toFixed(2)}.`);
