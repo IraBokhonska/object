@@ -10,9 +10,9 @@ const car = {
   manufacturer: "Germany",
   model: "Audi",
   year: 2015,
-  "average speed": 100,
+  averageSpeed: 100,
   engine: 65,
-  "fuel consumption": 10,
+  fuelConsumption: 10,
   drivers: [
     {
       number: 1,
@@ -29,14 +29,14 @@ const car = {
   // функція вираз
   info: function () {
     console.log(
-      `Manufacturer is ${car.manufacturer}, model ${car.model}, year ${car.year}, average speed is ${car["average speed"]} km per hour, 
-      engine volume ${car.engine} liters,  fuel consumption is ${car["fuel consumption"]} liters per 100km.`
+      `Manufacturer is ${this.manufacturer}, model ${this.model}, year ${this.year}, average speed is ${this.averageSpeed} km per hour, 
+      engine volume ${this.engine} liters,  fuel consumption is ${this.fuelConsumption} liters per 100km.`
     );
   },
 
   // стрілочна функція
   // додавання об'єкта в масив
-  addDriver: () => {
+  addIsDriver: () => {
     car.drivers.push({
       number: 3,
       name: "Alex Black",
@@ -61,8 +61,8 @@ const car = {
   },
 
   calculateFuelAndTime(distance) {
-    const fuel = Math.ceil(distance * (car["fuel consumption"] / 100));
-    const time = Math.floor(((distance / car["average speed"]) * 5) / 4);
+    const fuel = Math.ceil(distance * (car.fuelConsumption / 100));
+    const time = Math.floor(((distance / car.averageSpeed) * 5) / 4);
 
     console.log(
       `To travel ${distance} km, it will take  ${fuel} liters of fuel and ${time} hours.`
@@ -71,7 +71,7 @@ const car = {
 };
 
 car.info();
-car.addDriver();
+car.addIsDriver();
 car.сheckIsDriver("Alex Black", 30);
 car.calculateFuelAndTime(1500);
 
